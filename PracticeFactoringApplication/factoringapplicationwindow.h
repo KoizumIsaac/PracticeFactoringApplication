@@ -1,6 +1,7 @@
 #ifndef FACTORINGAPPLICATIONWINDOW_H
 #define FACTORINGAPPLICATIONWINDOW_H
 
+#include "jkqtmathtext/jkqtmathtext.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
