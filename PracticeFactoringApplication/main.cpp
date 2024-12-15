@@ -5,7 +5,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    FactoringApplicationWindow w;
+    FactoringModel* factorModel = new FactoringModel();
+    FactoringApplicationWindow w( factorModel );
     w.show();
     return a.exec();
 }

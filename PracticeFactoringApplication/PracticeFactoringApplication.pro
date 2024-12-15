@@ -30,7 +30,7 @@ DEPENDPATH += \
               ../JKQtPlotter/lib \
               ../JKQtPlotter/qmake/staticlib/jkqtmathtextlib
 INCLUDEPATH += ../JKQtPlotter/lib
-CONFIG (debug, debug|release) {
+CONFIG (debug, release) {
     DEPENDPATH += ../../JKQtPlotter/qmake/staticlib/jkqtmathtextlib/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug
     LIBS += -L../../JKQtPlotter/qmake/staticlib/jkqtmathtextlib/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug -ljkqtmathtextlib_debug
 } else {
@@ -42,6 +42,9 @@ unix|win32: LIBS += -L$$PWD/Test/ -ljkqtmathtextlib
 
 INCLUDEPATH += $$PWD/../JKQtPlotter/qmake/staticlib/jkqtmathtextlib/build/Desktop_Qt_6_8_0_MinGW_64_bit-Release/release
 DEPENDPATH += $$PWD/../JKQtPlotter/qmake/staticlib/jkqtmathtextlib/build/Desktop_Qt_6_8_0_MinGW_64_bit-Release/release
+
+INCLUDEPATH += $$PWD/../JKQtPlotter/qmake/staticlib/jkqtmathtextlib/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug
+DEPENDPATH += $$PWD/../JKQtPlotter/qmake/staticlib/jkqtmathtextlib/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug
 
 win32:!win32-g++: PRE_TARGETDEPS += $$PWD/Test/jkqtmathtextlib.lib
 else:unix|win32-g++: PRE_TARGETDEPS += $$PWD/Test/libjkqtmathtextlib.a
