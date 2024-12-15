@@ -14,7 +14,7 @@ public:
     explicit FactoringModel(QObject *parent = nullptr);
 
 signals:
-
+    void updateEquation();
 public slots:
     ///
     /// \brief updateToNewPolynomial - Updates the polynomial to check for a new one.

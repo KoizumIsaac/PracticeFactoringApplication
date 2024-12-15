@@ -22,6 +22,9 @@ public:
 signals:
     void getEquation();
 
+public slots:
+    void paintEquation();
+
 private:
     Ui::FactoringApplicationWindow *ui;
     FactoringModel* factorModel;
