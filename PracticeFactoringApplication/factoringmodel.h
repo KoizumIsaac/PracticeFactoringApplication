@@ -2,6 +2,7 @@
 #define FACTORINGMODEL_H
 
 #include <QObject>
+#include <QRandomGenerator>
 
 ///
 /// \brief The FactoringModel class - Class to track and check if polynomial is right.
@@ -14,7 +15,11 @@ public:
     explicit FactoringModel(QObject *parent = nullptr);
 
 signals:
+    ///
+    /// \brief updateEquation - Let's display know it needs to update.
+    ///
     void updateEquation();
+
 public slots:
     ///
     /// \brief updateToNewPolynomial - Updates the polynomial to check for a new one.
@@ -30,6 +35,7 @@ public slots:
 private:
     int firstAnswer;
     int secondAnswer;
+    QRandomGenerator numberGenerator;
 };
 
 #endif // FACTORINGMODEL_H

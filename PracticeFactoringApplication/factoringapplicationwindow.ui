@@ -14,9 +14,14 @@
    <string>Find the Zeros of the Polynomial!</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,2,2,1">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,2,2,0">
     <item>
      <widget class="QLabel" name="promptLabel">
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
       <property name="mouseTracking">
        <bool>true</bool>
       </property>
@@ -62,7 +67,14 @@
        </widget>
       </item>
       <item>
-       <widget class="QSpinBox" name="firstZeroInput"/>
+       <widget class="QSpinBox" name="firstZeroInputBox">
+        <property name="minimum">
+         <number>-10</number>
+        </property>
+        <property name="maximum">
+         <number>10</number>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QLabel" name="secondZeroDesc">
@@ -80,16 +92,34 @@
        </widget>
       </item>
       <item>
-       <widget class="QSpinBox" name="secondZeroInput"/>
+       <widget class="QSpinBox" name="secondZeroInputBox">
+        <property name="minimum">
+         <number>-10</number>
+        </property>
+        <property name="maximum">
+         <number>10</number>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
     <item>
-     <widget class="QPushButton" name="checkAnswerButton">
-      <property name="text">
-       <string>Check Answer</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="checkAnswerButton">
+        <property name="text">
+         <string>Check Answer</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="newEquationButton">
+        <property name="text">
+         <string>New Equation</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

@@ -19,6 +19,11 @@ FactoringApplicationWindow::FactoringApplicationWindow(FactoringModel* factorMod
             &FactoringModel::updateEquation,
             this,
             &FactoringApplicationWindow::paintEquation);
+
+    connect(ui->newEquationButton,
+            &QPushButton::clicked,
+            factorModel,
+            &FactoringModel::updateToNewPolynomial);
 }
 
 FactoringApplicationWindow::~FactoringApplicationWindow()
