@@ -21,9 +21,12 @@ public:
 
 signals:
     void getEquation();
+    void checkZeros(int firstZero, int secondZero);
 
 public slots:
     void paintEquation();
+
+    void resultOfCheckEquation(bool resultOfCheck);
 
 private:
     Ui::FactoringApplicationWindow *ui;

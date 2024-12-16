@@ -20,6 +20,12 @@ signals:
     ///
     void updateEquation();
 
+    ///
+    /// \brief resultOfCheckEquation - Result of checking if the zeros were right.
+    /// \param result - The boolean of the check.
+    ///
+    void resultOfCheckEquation(bool result);
+
 public slots:
     ///
     /// \brief updateToNewPolynomial - Updates the polynomial to check for a new one.
@@ -27,10 +33,19 @@ public slots:
     void updateToNewPolynomial();
 
     ///
-    /// \brief getPolynomial - Gets the polynomial as a string
+    /// \brief getPolynomial - Gets the polynomial as a string.
     /// \return String of the polynomial
     ///
     QString getPolynomial();
+
+    ///
+    /// \brief checkEquation - Checks the zeros the user inputted and emits a signal that sends if it
+    /// correct or not.
+    ///
+    /// \param firstZero - First zero to check
+    /// \param secondZero - Second zero to check
+    ///
+    void checkEquation(int firstZero, int secondZero);
 
 private:
     int firstAnswer;

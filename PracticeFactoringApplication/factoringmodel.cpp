@@ -45,3 +45,12 @@ void FactoringModel::updateToNewPolynomial() {
 
     emit updateEquation();
 }
+
+void FactoringModel::checkEquation(int firstZero, int secondZero) {
+    if((firstZero != firstAnswer && secondZero != firstAnswer) ||
+       (firstZero != secondAnswer && secondZero != secondAnswer)) {
+        emit resultOfCheckEquation(false);
+        return;
+    }
+    emit resultOfCheckEquation(true);
+}

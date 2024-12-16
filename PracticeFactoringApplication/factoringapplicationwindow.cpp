@@ -24,6 +24,16 @@ FactoringApplicationWindow::FactoringApplicationWindow(FactoringModel* factorMod
             &QPushButton::clicked,
             factorModel,
             &FactoringModel::updateToNewPolynomial);
+
+    connect(ui->checkAnswerButton,
+            &QPushButton::clicked,
+            factorModel,
+            [this, factorModel] { factorModel->checkEquation(ui->firstZeroInputBox->value(), ui->secondZeroInputBox->value()); });
+
+    connect(factorModel,
+            &FactoringModel::resultOfCheckEquation,
+            this,
+            &FactoringApplicationWindow::resultOfCheckEquation);
 }
 
 FactoringApplicationWindow::~FactoringApplicationWindow()
@@ -52,4 +62,11 @@ void FactoringApplicationWindow::paintEquation() {
     ui->equationDisplay->setPixmap(pix);
     ui->equationDisplay->show();
     ui->equationDisplay->resize(300,200);
+}
+
+void FactoringApplicationWindow::resultOfCheckEquation(bool resultOfCheckEquation) {
+    if(resultOfCheckEquation)
+        qDebug() << "Correct";
+    else
+        qDebug() << "Incorrect";
 }
