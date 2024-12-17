@@ -54,10 +54,6 @@ void FactoringApplicationWindow::paintEquation() {
     painter.begin(&pix);
     textRenderer.draw(painter, Qt::AlignCenter, QRectF(0,0,pix.width(), pix.height()), false);
     painter.end();
-    textRenderer.parse(factorModel->getPolynomial());
-    painter.begin(&pix);
-    textRenderer.draw(painter, Qt::AlignCenter, QRectF(0,0,pix.width(), pix.height()), false);
-    painter.end();
 
     ui->equationDisplay->setPixmap(pix);
     ui->equationDisplay->show();
@@ -65,8 +61,9 @@ void FactoringApplicationWindow::paintEquation() {
 }
 
 void FactoringApplicationWindow::resultOfCheckEquation(bool resultOfCheckEquation) {
-    if(resultOfCheckEquation)
-        qDebug() << "Correct";
-    else
-        qDebug() << "Incorrect";
+    if(resultOfCheckEquation) {
+
+    } else {
+
+    }
 }
