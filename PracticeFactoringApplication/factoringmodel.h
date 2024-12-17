@@ -26,6 +26,18 @@ signals:
     ///
     void resultOfCheckEquation(bool result);
 
+    ///
+    /// \brief updateLongestStreak - Updates the longest streak label.
+    /// \param longestStreak - The new longest streak.
+    ///
+    void updateLongestStreak(int longestStreak);
+
+    ///
+    /// \brief updateCurrentStreak - Updates the current streak.
+    /// \param currentStreak - The new current streak.
+    ///
+    void updateCurrentStreak(int currentStreak);
+
 public slots:
     ///
     /// \brief updateToNewPolynomial - Updates the polynomial to check for a new one.
@@ -50,6 +62,9 @@ public slots:
 private:
     int firstAnswer;
     int secondAnswer;
+    int currentStreak;
+    int longestStreak;
+    bool checkedAnswerBeforeUpdate;
     QRandomGenerator numberGenerator;
 };
 
