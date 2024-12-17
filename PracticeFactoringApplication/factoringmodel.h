@@ -2,7 +2,6 @@
 #define FACTORINGMODEL_H
 
 #include <QObject>
-#include <QRandomGenerator>
 
 ///
 /// \brief The FactoringModel class - Class to track and check if polynomial is right.
@@ -65,7 +64,6 @@ private:
     int currentStreak;
     int longestStreak;
     bool checkedAnswerBeforeUpdate;
-    QRandomGenerator numberGenerator;
 };
 
 #endif // FACTORINGMODEL_H

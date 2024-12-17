@@ -1,8 +1,5 @@
 #include "factoringmodel.h"
 
-#include <QRandomGenerator>
-#include <QDebug>
-
 FactoringModel::FactoringModel(QObject *parent) :  QObject{parent}, currentStreak(0), longestStreak(0), checkedAnswerBeforeUpdate(false) {
     updateToNewPolynomial();
 }
@@ -39,8 +36,8 @@ QString FactoringModel::getPolynomial() {
 }
 
 void FactoringModel::updateToNewPolynomial() {
-    firstAnswer = numberGenerator.bounded(-10, 10);
-    secondAnswer = numberGenerator.bounded(-10, 10);
+    firstAnswer = rand() % 21 - 10;
+    secondAnswer = rand() % 21 - 10;
 
     if(firstAnswer > secondAnswer) {
         std::swap(firstAnswer, secondAnswer);
