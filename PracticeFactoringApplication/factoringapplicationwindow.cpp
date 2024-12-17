@@ -4,6 +4,7 @@
 #include "factoringmodel.h"
 #include <QPainter>
 #include <QPixmap>
+#include <QTimer>
 
 
 FactoringApplicationWindow::FactoringApplicationWindow(FactoringModel* factorModel, QWidget *parent)
@@ -31,9 +32,14 @@ FactoringApplicationWindow::FactoringApplicationWindow(FactoringModel* factorMod
             [this, factorModel] { factorModel->checkEquation(ui->firstZeroInputBox->value(), ui->secondZeroInputBox->value()); });
 
     connect(factorModel,
-            &FactoringModel::resultOfCheckEquation,
+            &FactoringModel::updateCurrentStreak,
             this,
-            &FactoringApplicationWindow::resultOfCheckEquation);
+            &FactoringApplicationWindow::updateCurrentStreak);
+
+    connect(factorModel,
+            &FactoringModel::updateLongestStreak,
+            this,
+            &FactoringApplicationWindow::updateLongestStreak);
 }
 
 FactoringApplicationWindow::~FactoringApplicationWindow()
@@ -60,10 +66,20 @@ void FactoringApplicationWindow::paintEquation() {
     ui->equationDisplay->resize(300,200);
 }
 
-void FactoringApplicationWindow::resultOfCheckEquation(bool resultOfCheckEquation) {
-    if(resultOfCheckEquation) {
+void FactoringApplicationWindow::updateCurrentStreak(int currentStreak) {
+    ui->currentStreakLabel->setText("Current Streak: " + QString::number(currentStreak));
 
+    //If the user gets the answer right, they should get a new equation.
+    if(currentStreak != 0) {
+        ui->checkAnswerButton->setStyleSheet("QPushButton { background-color: green }");
+        QTimer::singleShot(500, [this] { ui->checkAnswerButton->setStyleSheet("QPushButton { background-color: gray }"); });
+        factorModel->updateToNewPolynomial();
     } else {
-
+        ui->checkAnswerButton->setStyleSheet("QPushButton { background-color: red }");
+        QTimer::singleShot(500, [this] { ui->checkAnswerButton->setStyleSheet("QPushButton { background-color: gray }"); });
     }
+}
+
+void FactoringApplicationWindow::updateLongestStreak(int longestStreak) {
+    ui->longestStreakLabel->setText("Longest Streak: " + QString::number(longestStreak));
 }

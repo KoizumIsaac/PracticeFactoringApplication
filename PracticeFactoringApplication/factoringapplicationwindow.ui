@@ -18,7 +18,7 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="currentStreakLabel">
         <property name="font">
          <font>
           <bold>true</bold>
@@ -33,7 +33,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="longestStreakLabel">
         <property name="font">
          <font>
           <bold>true</bold>
@@ -141,6 +141,9 @@
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QPushButton" name="checkAnswerButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton { background-color: gray }</string>
+        </property>
         <property name="text">
          <string>Check Answer</string>
         </property>
@@ -148,6 +151,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="newEquationButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton { background-color: gray }</string>
+        </property>
         <property name="text">
          <string>New Equation</string>
         </property>

@@ -4,6 +4,9 @@
 #include "jkqtmathtext/jkqtmathtext.h"
 #include "factoringmodel.h"
 #include <QMainWindow>
+#include <QPainter>
+#include <QPixmap>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -26,7 +29,9 @@ signals:
 public slots:
     void paintEquation();
 
-    void resultOfCheckEquation(bool resultOfCheck);
+    void updateCurrentStreak(int currentStreak);
+
+    void updateLongestStreak(int longestStreak);
 
 private:
     Ui::FactoringApplicationWindow *ui;
