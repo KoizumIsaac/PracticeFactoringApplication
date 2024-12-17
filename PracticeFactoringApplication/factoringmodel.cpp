@@ -47,10 +47,18 @@ void FactoringModel::updateToNewPolynomial() {
 }
 
 void FactoringModel::checkEquation(int firstZero, int secondZero) {
+    if(firstAnswer == secondAnswer) {
+        if(firstAnswer != firstZero || firstAnswer != secondZero) {
+            emit resultOfCheckEquation(false);
+            return;
+        }
+    }
+
     if((firstZero != firstAnswer && secondZero != firstAnswer) ||
        (firstZero != secondAnswer && secondZero != secondAnswer)) {
         emit resultOfCheckEquation(false);
         return;
     }
+
     emit resultOfCheckEquation(true);
 }
