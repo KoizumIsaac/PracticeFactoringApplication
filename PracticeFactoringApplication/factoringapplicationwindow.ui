@@ -25,7 +25,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Current Streak:  0</string>
+         <string>Current Streak: 0</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignCenter</set>
