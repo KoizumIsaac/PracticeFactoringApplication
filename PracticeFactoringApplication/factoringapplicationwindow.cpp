@@ -14,8 +14,6 @@ FactoringApplicationWindow::FactoringApplicationWindow(FactoringModel* factorMod
 {
     ui->setupUi(this);
 
-    paintEquation();
-
     connect(factorModel,
             &FactoringModel::updateEquation,
             this,
@@ -40,6 +38,8 @@ FactoringApplicationWindow::FactoringApplicationWindow(FactoringModel* factorMod
             &FactoringModel::updateLongestStreak,
             this,
             &FactoringApplicationWindow::updateLongestStreak);
+
+    paintEquation();
 }
 
 FactoringApplicationWindow::~FactoringApplicationWindow()
